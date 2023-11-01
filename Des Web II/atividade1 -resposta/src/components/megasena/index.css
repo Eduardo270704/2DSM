@@ -1,0 +1,34 @@
+.mega-bloco-principal {
+    display: flex;
+    padding: 30px 0px;
+    border-bottom: 1px solid #ddd;
+    background-color: yellow;
+}
+
+.mega-bloco-direita {
+    margin-left: 50px;
+    background-color: aqua;
+}
+
+.mega-bloco-loteria {
+    display: flex;
+}
+
+.mega-nome-loteria {
+    font-size: 25px;
+    font-weight: bold;
+    color: #209869;
+    margin-left: 10px;
+}
+
+.mega-bloco-estimativa {
+    width: 240px;
+    margin-left: 45px;
+    margin-top: 15px;
+    background-color: yellow;
+}
+
+.mega-texto-estimativa {
+    font-size: 15px;
+    color: #4c556c
+}
