@@ -16,4 +16,5 @@ export interface Props {
 export interface LoteriaProps {
   megasena: Props;
   lotofacil: Props;
+  quina: Props;
 }

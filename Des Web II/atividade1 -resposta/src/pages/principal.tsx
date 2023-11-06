@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Contexto } from "../contexts";
 import Megasena from "../components/megasena";
 import Lotofacil from "../components/lotofacil";
+import Quina from "../components/quina";
 import "./index.css";
 
 export default function Principal() {
@@ -12,6 +13,7 @@ export default function Principal() {
         <div className="principal-bloco">
           <Megasena />
           <Lotofacil />
+          <Quina />
         </div>
       ) : (
         <div>Carregando...</div>
