@@ -15,8 +15,19 @@ export interface Props {
 
 export interface LoteriaProps {
   megasena: Props;
-  lotofacil: Props;
+  timemania: Props;
   quina: Props;
   ativo: string;
   setAtivo: (value: string) => void;
+  tema: ThemeProps;
+  setTema: (value: ThemeProps) => void;
+}
+
+export interface ThemeProps {
+  acumulou: string;
+  data: string;
+  estimativa: string;
+  loteria: string;
+  bola: string;
+  bolafonte: string;
 }
