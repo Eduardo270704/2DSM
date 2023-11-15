@@ -1,37 +1,18 @@
-import AppDataSource from "./dados";
+import ufs from "./dados";
 import { Request, Response } from "express";
 
 class UfController {
-  public async list(_: Request, res: Response): Promise<Response> {
-    const ufs = AppDataSource;
-    return res.json(ufs);
+  listByUf(req: Request, res: Response) {
+    const sigla = req.params.sigla.toUpperCase();
+    const uf = ufs.find((uf) => uf.uf === sigla);
+    res.json(uf ? uf : { error: `Sigla ${sigla} não encontrada` });
   }
 
-  public async listByUf(req: Request, res: Response): Promise<Response> {
-    const sigla = req.params.uf;
-    const uf = AppDataSource.getBySigla(Ufs, {
-        where: { uf: sigla }
-    });
-    return res.json(uf);
-  }
-}
-/*
-
-  public async listById(req: Request, res: Response): Promise<Response> {
-    const { id } = req.params;
-
-    const uf = await AppDataSource.manager.findOne(Uf, {
-      where: { id: parseInt(id) },
-      relations: {
-        user: true,
-        brand: true,
-        category: true,
-        photos: true,
-      },
-    });
-    return res.json(uf);
+  listByIbge(req: Request, res: Response) {
+    const ibge = parseInt(req.params.ibge);
+    const uf = ufs.find((uf) => uf.ibge === ibge);
+    res.json(uf ? uf : { error: "UF não encontrada" });
   }
 }
 
-export default new UfController();
-*/
+export default new UfController(); // Modificado aqui para exportar uma instância

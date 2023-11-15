@@ -1,10 +1,10 @@
 import { Router, Request, Response } from "express";
-import controller from "../controllers/UfController";
+import UfController from "../controllers/UfController";
 
 const routes = Router();
 
-routes.get("/sigla/:sigla", controller.listBySigla);
-routes.get("/ibge/:ibge", controller.listByIbge);
+routes.get("/sigla/:sigla", UfController.listByUf);
+routes.get("/ibge/:ibge", UfController.listByIbge);
 
 routes.use((_: Request, res: Response) =>
   res.json({ error: "Requisição desconhecida" })
